@@ -1,0 +1,13 @@
+Query 1: Query to retrieve total number of Carrier aircrafts.
+SELECT COUNT(a_type) FROM aircraft WHERE a_type='Carrier';
+
+Query 2: Query to retrieve heaviest aircraft.
+SELECT a_name, a_type FROM aircraft JOIN technical_specs USING (a_id) WHERE weight_kg 
+IN (SELECT MAX(Weight_kg) FROM technical_specs);
+
+Query 3: Query to retrieve names and top speeds of all fighter jets.
+SELECT a_name, top_speed_kmh FROM aircraft JOIN technical_specs USING (a_id) WHERE top_speed_kmh IN
+(SELECT top_speed_kmh FROM technical_specs t JOIN aircraft USING (a_id) WHERE a_type='Fighter'); 
+
+Query 4: Query to retrieve all information about aircrafts manufactured by Pakistan.
+SELECT * FROM aircraft JOIN manufacturer USING (m_id) WHERE m_name='Pakistan Aeronautical Complex';
