@@ -78,3 +78,7 @@ INSERT INTO technical_specs values (1, 4, 932, 193600, 172370),
 (18, 2, 876, 26020, 44700),
 (19, 1, 1300, 2500, 6993),
 (20, 2, 2300, 3169, 40600 );
+
+/* ALTER TABLE physical_specs CHANGE COLUMN wingspan_m wingspan_meters INT;
+ALTER TABLE physical_specs CHANGE COLUMN height_m height_meters INT;
+*/
